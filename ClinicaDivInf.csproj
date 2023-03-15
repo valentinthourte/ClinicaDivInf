@@ -8,4 +8,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="UML\" />
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>
