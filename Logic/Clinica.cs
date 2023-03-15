@@ -6,11 +6,15 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClinicaDivInf
+namespace ClinicaDivInf.Logic
 {
     internal class Clinica
     {
-        private List<Medico> listaMedicos; 
+        // Se podría tener una única lista de Personas, y comparar por el tipo de dato al querer obtener
+        // un paciente o médico específico. Considero que esta implementación resultaría mas eficiente, ya que no se 
+        // debe iterar innecesariamente sobre elementos que no corresponden
+
+        private List<Medico> listaMedicos;    
         private List<Paciente> listaPacientes;
 
         public Clinica()
@@ -37,13 +41,14 @@ namespace ClinicaDivInf
 
         public void CrearPaciente(string nombre, int numeroHistoriaClinica)
         {
-            // Aquí se podría hacer la conexión a la base de datos para persistir la información.
+            // Aquí se podría hacer la llamada a la clase de persistencia para persistir la información.
             // Por el tamaño del proyecto lo considero innecesario
+
             if (GetPacientePorNombre(nombre) is not null)
             {
                 throw new Exception("El paciente ya existe");
             }
-            listaPacientes.Add(new Paciente(nombre, numeroHistoriaClinica)); 
+            listaPacientes.Add(new Paciente(nombre, numeroHistoriaClinica));
         }
 
         public void CrearMedico(string nombre, int numeroMatricula, string especialidad)
@@ -57,12 +62,12 @@ namespace ClinicaDivInf
 
         internal Paciente GetPacientePorNombre(string nombre)
         {
-            return (Paciente)listaPacientes.FirstOrDefault(paciente => paciente.Nombre == nombre);
+            return listaPacientes.FirstOrDefault(paciente => paciente.Nombre == nombre);
         }
 
         internal Medico GetMedicoPorNombre(string nombre)
         {
-            return (Medico)listaMedicos.FirstOrDefault(medico => medico.Nombre == nombre);
+            return listaMedicos.FirstOrDefault(medico => medico.Nombre == nombre);
         }
     }
 }

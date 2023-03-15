@@ -1,3 +1,5 @@
+using ClinicaDivInf.Logic;
+
 namespace ClinicaDivInf
 {
     public partial class frmClinica : Form

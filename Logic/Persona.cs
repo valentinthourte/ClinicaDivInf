@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClinicaDivInf
+namespace ClinicaDivInf.Logic
 {
     internal abstract class Persona
     {

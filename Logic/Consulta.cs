@@ -1,8 +1,8 @@
-﻿namespace ClinicaDivInf
+﻿namespace ClinicaDivInf.Logic
 {
     public class Consulta
     {
-        
+
         private bool FueEnConsultorio { get; }
         private DateTime FechaRealizacion { get; }
         private Medico Profesional { get; }

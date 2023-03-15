@@ -1,0 +1,3 @@
+En esta carpeta iría la lógica relacionada a la persistencia de la información.
+Por el pequeño tamaño del proyecto, decidí no persistir la información, y que trabaje sobre los datos agregados en tiempo
+de ejecución
